@@ -1,6 +1,116 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .logotipo{
     width: 80px;
     height: 40px;
     border-radius: 10px;
-    border: 2px solid white;
+    border-right: 0.07rem solid white;
+    border-bottom: 0.03rem solid white;
+}
+
+.navbar{
+    width: 100%;
+    padding: 0;
+    padding-top: 5px;
+    background-color: dodgerblue;
+}
+
+.textoNavbar{
+    color: white;
+    font-weight: 450;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dropdown-menu{
+    background-color: dodgerblue;
+}
+
+nav{
+    height: 60px;
+}
+
+.footerContainer{
+    margin-top: auto;
+}
+
+.fondoFooter{
+    width: 100%;
+    padding: 0;
+    padding-top: 5px;
+    background-color: dodgerblue;
+}
+
+.footer{
+    margin-top: auto;
+    color: white;
+}
+
+.colorInmobiliria{
+    color: white;
+    font-size: x-large;
+    width: auto;
+}
+
+.redesSociales{
+    width: 40px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.contenedorRedesSociales{
+    margin-right: 100px;
+}
+
+.colorLinea{
+    color: white;
+}
+
+hr{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.ultimoTexto{
+    color: white;
+}
+
+.derechosReservados{
+    display: flex;
+    justify-content: end;
+}
+
+.photoCarousel{
+    height: 300px;
+}
+
+.servicios{
+    margin: 20px auto;
+}
+
+.card{
+    border-radius: 10px;
+}
+
+.card-img-top{
+    width: 17.5rem;
+    margin: auto;
+}
+
+.card-title{
+    font-weight: bold;
+}
+
+.card-text{
+    text-align: justify;
+}
+
+.card-body{
+    color: white;
+    background-color: dodgerblue;   
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

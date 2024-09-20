@@ -10,40 +10,119 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <img src="./assets/images/Logo_FM.jpg" alt="Logo" class="logotipo">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Páginas
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <section class="navbar">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <img src="./assets/images/Logo_FM.jpg" alt="Logo" class="logotipo">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" data-bs-theme="ligth"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item mx-3">
+                    <a class="nav-link disabled textoNavbar" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item dropdown active mx-2">
+                    <a class="nav-link dropdown-toggle textoNavbar" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Páginas
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item active textoNavbar" href="./pages/galeria.html">Galería</a></li>
+                      <li><a class="dropdown-item active textoNavbar" href="./pages/presupuesto.html">Presupuesto</a></li>
+                      <li><a class="dropdown-item active textoNavbar" href="./pages/contacto.html">Contacto</a></li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-    </nav>
+              </div>
+            </div>
+        </nav>
+    </section>
 
+    <section>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/images/inmuebles_en_venta/pexels-dianne-60973-226407.jpg" class="d-block w-100 photoCarousel" alt="inmueble1">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/inmuebles_en_venta/pexels-luis-yanez-57302-206172.jpg" class="d-block w-100 photoCarousel" alt="inmueble2">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/inmuebles_en_venta/pexels-pixabay-208736.jpg" class="d-block w-100 photoCarousel" alt="inmueble3">
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <h1 class="servicios">Servicios en Oferta</h1>
+
+    <div class="container">
+        <div class="row w-100">
+            <div class="col-12 col-md-6 col-lg-4 my-3">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="./assets/images/LogoIcon.png" class="card-img-top" alt="compra">
+                    <div class="card-body">
+                      <h5 class="card-title">Compra</h5>
+                      <p class="card-text">Con nostros siempre podrá tener su inmueble de ensueños al alcance de sus manos.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 my-3">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="./assets/images/NavbarIcon.png" class="card-img-top" alt="compra">
+                    <div class="card-body">
+                      <h5 class="card-title">Venta</h5>
+                      <p class="card-text">Con nostros le sacará el mayor provecho posible a la venta de sus inmuebles.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 my-3">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="./assets/images/renta.png" class="card-img-top" alt="renta">
+                    <div class="card-body">
+                      <h5 class="card-title">Renta</h5>
+                      <p class="card-text">Con nostros le sacará el mayor provecho posible a la venta de sus inmuebles.</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100 p-0 fondoFooter footerContainer">
+        <footer class="py-3 my-4">
+          <div class="d-flex primerContenedorFooter my-3">
+            <div class="d-flex w-50 justify-content-start colorInmobiliria mx-4">Inmobiliaria Fernández Martínez</div>  
+            <div class="d-flex w-50 justify-content-end mx-3 contenedorRedesSociales">
+                <div>
+                    <img src="./assets/images/redes_sociales/facebook.png" alt="facebook" class="redesSociales">
+                </div>
+                <div>
+                    <img src="./assets/images/redes_sociales/instagram.png" alt="instagram" class="redesSociales">
+                </div>
+                <div>
+                    <img src="./assets/images/redes_sociales/linkedin.png" alt="linkedin" class="redesSociales">
+                </div>
+                <div>
+                    <img src="./assets/images/redes_sociales/twitter_2504947.png" alt="twitter" class="redesSociales">
+                </div>
+                <div class="mx-2">
+                    <img src="./assets/images/redes_sociales/youtube.png" alt="youtube" class="redesSociales">
+                </div>
+            </div>
+          </div>
+          <div>
+            <hr class="colorLinea">
+          </div>
+          <div class="m-0 px-3">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-1 ultimoTexto justify-content-center">Aviso Legal</div>
+                <div class="d-none d-lg-flex col-lg-8 ultimoTexto justify-content-center">Puede encontrarnos en General García #504, Bayamo, Granma, Cuba o en ventas@misitio.com</div>
+                <div class="col-12 col-md-6 col-lg-3 ultimoTexto derechosReservados">Todos los Derechos Reservados</div>
+                <div class="d-flex d-lg-none col-12 ultimoTexto justify-content-center">Puede encontrarnos en General García #504, Bayamo, Granma, Cuba o en ventas@misitio.com</div>
+            </div>
+          </div>
+        </footer>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
 </body>
