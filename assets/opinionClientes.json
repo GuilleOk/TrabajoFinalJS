@@ -1,0 +1,32 @@
+[
+        {
+            "id": 0,
+            "nombre":"Ana García López",
+            "foto":"../assets/images/avatars/av7.jpg",
+            "opinion": "La experiencia de comprar una casa con esta inmobiliaria fue excelente. El equipo fue muy profesional y me ayudaron en cada paso del proceso. ¡Recomiendo sus servicios a todos!"  
+        },
+        {
+            "id": 1,
+            "nombre":"Carlos Martínez Pérez",
+            "foto":"../assets/images/avatars/av4.jpg",
+            "opinion": "Vendí mi apartamento a través de esta inmobiliaria y no podría estar más satisfecho. Fueron rápidos, eficientes y consiguieron un buen precio por mi propiedad."
+        },
+        {
+            "id": 2,
+            "nombre":"Laura Fernández Gómez",
+            "foto":"../assets/images/avatars/av2.jpg",
+            "opinion": "Alquilar un piso con esta inmobiliaria fue una experiencia sin complicaciones. El personal fue muy amable y siempre estuvo disponible para responder a mis preguntas."
+        },
+        {
+            "id": 3,
+            "nombre":"José Rodríguez Sánchez",
+            "foto":"../assets/images/avatars/av5.jpg",
+            "opinion": "Compré una propiedad comercial a través de esta inmobiliaria y estoy muy contento con el servicio. Fueron muy atentos a mis necesidades y me ayudaron a encontrar el lugar perfecto para mi negocio."
+        },
+        {
+            "id": 4,
+            "nombre":"María López Hernández",
+            "foto":"../assets/images/avatars/av3.jpg",
+            "opinion": "La renta de mi apartamento fue muy fácil gracias a esta inmobiliaria. Se encargaron de todo y encontré inquilinos rápidamente. ¡Muy recomendable!"
+        }
+]
