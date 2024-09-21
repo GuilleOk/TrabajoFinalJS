@@ -1,13 +1,3 @@
-// import opinionesClientes from './opinionClientes.json';
-
-// let opiniones = [...opinionesClientes];
-
-// console.log(opiniones);
-
-// let opiniones = document.getElementsByClassName('opiniones');
-
-// console.log(opiniones)
-
 function cargarOpiniones(url) {
     return fetch(url)
         .then(response=>{
@@ -37,6 +27,6 @@ function cargarOpiniones(url) {
                 `                
             });
         })
-}
+};
 
-cargarOpiniones('../assets/opinionClientes.json')
+cargarOpiniones('../assets/opinionClientes.json');

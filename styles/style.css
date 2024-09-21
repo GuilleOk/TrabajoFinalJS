@@ -97,6 +97,7 @@ hr{
 
 .card-img-top{
     width: 17.5rem;
+    height: 15rem;
     margin: auto;
 }
 
@@ -128,4 +129,15 @@ hr{
 
 #labelOpiniones{
     text-align: center;
+}
+
+.image{
+    height: 7rem;
+    margin: .5rem;
+}
+
+#galeria{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

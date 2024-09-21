@@ -1,0 +1,22 @@
+.image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.image:hover{
+    transform: scale(1.2);
+}
+
+/* .ultimaFoto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+} */
+
+.imagenes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
