@@ -27,7 +27,7 @@ function cargarOpiniones(url) {
                         </div>
                         <div class='col-8'>
                             <div class='mb-5'>
-                                <h3>${dato.nombre}</h3>
+                                <h4>${dato.nombre}</h4>
                             </div>
                             <div class='my-5 texto'>
                                 <p class='mx-4 my-auto'>${dato.opinion}</p>
