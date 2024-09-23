@@ -141,3 +141,74 @@ hr{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.input-group-text{
+    background-color: dodgerblue;
+    color: white;
+}
+
+input{
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid tan;
+    outline: none;
+}
+
+input:focus{
+    border: 2px solid slategrey;
+}
+
+.inputError{
+    width: 95%;
+    border-radius: 2px;
+}
+
+.inputError input{
+    width: 100%;
+    margin-left: 2.5%;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+.identificadorError{
+    color: red;
+}
+
+.identificadorOk{
+    color: green;
+}
+
+small{
+    display: block;
+}
+
+.inputOk{
+    width: 95%;
+    border-radius: 2px;
+}
+
+.inputOk input{
+    width: 100%;
+    margin-left: 2.5%;
+    border-radius: 5px;
+    border: 1px solid green;
+}
+
+/* .fotoOferta{
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    display: inline;
+} */
+
+select{
+    width: 95%;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid tan;
+    outline: none;
+}
+
+select:focus{
+    border: 2px solid green;
+}
