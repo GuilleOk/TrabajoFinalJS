@@ -149,8 +149,9 @@ hr{
 
 input{
     width: 95%;
+    height: 40px;
     border-radius: 5px;
-    border: 1px solid tan;
+    border: 1px solid lightgray;
     outline: none;
 }
 
@@ -194,16 +195,8 @@ small{
     border: 1px solid green;
 }
 
-/* .fotoOferta{
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
-    display: inline;
-} */
-
 select{
     width: 95%;
-    height: 28px;
     border-radius: 5px;
     border: 1px solid tan;
     outline: none;
@@ -212,3 +205,14 @@ select{
 select:focus{
     border: 2px solid green;
 }
+
+.mult-select-tag{
+    cursor: pointer;
+    height: 28px !important;
+
+    width: 95% !important;
+}
+
+/* #producto option{
+    display: inline-block;
+} */
