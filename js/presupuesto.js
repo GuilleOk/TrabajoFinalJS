@@ -175,10 +175,10 @@ formulario.addEventListener('submit',async(e)=>{//hay que hacer el handler
     presupuesto.value = `${totalPagar}`;
 
 
-    // if (valida.apellidos == true && valida.email == true && valida.nombre == true && valida.plazos == true 
-    //     && valida.politPriv == true && valida.producto == true && valida.telefono == true){
+    if (valida.apellidos == true && valida.email == true && valida.nombre == true && valida.plazos == true 
+        && valida.politPriv == true && valida.producto == true && valida.telefono == true){
         
-    //         console.log('first')
-    //         formulario.submit();
-    // }
+            console.log('first')
+            formulario.submit();
+    }
 })
