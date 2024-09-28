@@ -3,30 +3,30 @@
             "id": 0,
             "nombre":"Ana García López",
             "foto":"../assets/images/avatars/av7.jpg",
-            "opinion": "La experiencia de comprar una casa con esta inmobiliaria fue excelente. El equipo fue muy profesional y me ayudaron en cada paso del proceso. ¡Recomiendo sus servicios a todos!"  
+            "opinion": "¡Me encanta esta tienda! Los productos siempre llegan frescos y en perfecto estado. La variedad de carnes y embutidos es excelente, y los precios son muy competitivos. Además, el servicio de atención al cliente es muy amable y siempre responden rápido a cualquier consulta. Sin duda, mi sitio favorito para comprar productos de calidad."  
         },
         {
             "id": 1,
             "nombre":"Carlos Martínez Pérez",
             "foto":"../assets/images/avatars/av4.jpg",
-            "opinion": "Vendí mi apartamento a través de esta inmobiliaria y no podría estar más satisfecho. Fueron rápidos, eficientes y consiguieron un buen precio por mi propiedad."
+            "opinion": "Descubrí esta tienda hace unos meses, y desde entonces no he dejado de comprar mi café favorito aquí. Antes no conocía, por experiencia propia, el café cubano y me he quedado estupefacto con la calidad y la sensación que genera en el paladar dicho producto. ¡No hay nada mejor que recibir mi café recién tostado para empezar el día con energía!"
         },
         {
             "id": 2,
             "nombre":"Laura Fernández Gómez",
             "foto":"../assets/images/avatars/av2.jpg",
-            "opinion": "Alquilar un piso con esta inmobiliaria fue una experiencia sin complicaciones. El personal fue muy amable y siempre estuvo disponible para responder a mis preguntas."
+            "opinion": "He probado varias tiendas online, pero esta es, sin duda, la mejor para comprar bebidas y productos frescos. La variedad es impresionante, desde cervezas hasta jugos naturales. Además, siempre tienen ofertas interesantes y el proceso de compra es muy sencillo. ¡Recomendadísima!"
         },
         {
             "id": 3,
             "nombre":"José Rodríguez Sánchez",
             "foto":"../assets/images/avatars/av5.jpg",
-            "opinion": "Compré una propiedad comercial a través de esta inmobiliaria y estoy muy contento con el servicio. Fueron muy atentos a mis necesidades y me ayudaron a encontrar el lugar perfecto para mi negocio."
+            "opinion": "La calidad de los cárnicos que ofrecen es excepcional. Siempre recibo mis pedidos en excelente estado y el sabor es insuperable. Además, el proceso de compra es muy fácil y el servicio de entrega es rápido. Es la mejor opción que he encontrado para hacer mis compras de forma cómoda y segura."
         },
         {
             "id": 4,
             "nombre":"María López Hernández",
             "foto":"../assets/images/avatars/av3.jpg",
-            "opinion": "La renta de mi apartamento fue muy fácil gracias a esta inmobiliaria. Se encargaron de todo y encontré inquilinos rápidamente. ¡Muy recomendable!"
+            "opinion": "La variedad de productos que ofrecen es increíble, siempre encuentro lo que necesito, ya sea para mis reuniones con amigos o para mi día a día. Me encanta que también tienen bebidas artesanales y productos gourmet que no encuentro en otros lugares. Sin duda, es mi tienda de confianza."
         }
 ]

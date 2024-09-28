@@ -5,8 +5,8 @@ body{
 }
 
 .logotipo{
-    width: 80px;
-    height: 40px;
+    width: 120px;
+    height: 60px;
     border-radius: 10px;
     border-right: 0.07rem solid white;
     border-bottom: 0.03rem solid white;
@@ -96,10 +96,16 @@ hr{
 }
 
 .card-img-top{
-    width: 17.5rem;
+    width: 17rem;
     height: 15rem;
     margin: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
+
+/* .domicilio{
+    height: ;
+} */
 
 .card-title{
     font-weight: bold;
@@ -136,7 +142,7 @@ hr{
     margin: .5rem;
 }
 
-#galeria{
+.galeria{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -219,4 +225,17 @@ select:focus{
 
 .mostrarSmall{
     display: block;
+}
+
+li {
+    list-style: none; /* Elimina el estilo de lista si lo deseas */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+li input[type="checkbox"] {
+    order: 1; /* Asegura que el checkbox esté después del texto */
+    position: absolute;
+    right: 10px;
 }
