@@ -213,6 +213,10 @@ select:focus{
     width: 95% !important;
 }
 
-/* #producto option{
-    display: inline-block;
-} */
+.algoSmall{
+    display: none;
+}
+
+.mostrarSmall{
+    display: block;
+}

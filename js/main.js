@@ -44,7 +44,10 @@ let email = document.getElementById('email');
 let producto = document.getElementById('producto');
 let plazos = document.getElementById('plazos');
 let productosVenta = [];
-let formulario = document.querySelector('form');
+let extras = document.getElementById('extras');
+let politPriv = document.getElementById('flexCheckChecked');
+let presupuesto = document.getElementById('presupuesto');
+let formulario = document.getElementById('formulario');
 let productosElegidos = [];
 
 let valida = {
@@ -54,8 +57,7 @@ let valida = {
     email: false,
     producto: false,
     plazos: false,
-    presupuesto: false,
-    condiciones: false
+    politPriv: false,
 };
 
 //---------------Función para cargar los productos desde un json para la lógica del presupuesto---------
@@ -83,6 +85,7 @@ let setError = (etiqueta, mensaje)=>{
 
     identificadorForm.className = 'identificadorError';
     formControl.className = 'inputError';
+    small.className = 'mostrarSmall';
     small.innerText = mensaje;
 }
 
@@ -92,26 +95,26 @@ let setSuccess = (etiqueta)=>{
     let identificadorForm = formControl.parentElement;
 
     identificadorForm.className = 'identificadorOk';
-
+    small.className = 'mostrarSmall';
     small.innerText = '';
     formControl.className = 'inputOk';
 }
 
 //Función para validar algunos campos del formulario primcipalmente para la sección Datos de contacto
 
-function validarCampo (input,mensaje1, mensaje2, reglavalid){
+function validarCampo (input,propiedad,mensaje1, mensaje2, reglavalid){
     input.addEventListener('blur',()=>{
         let inputOk = reglavalid;
         let informacion = input.value.trim();
     if (informacion == '' || informacion == null) {
-        valida.input = false;
+        valida[propiedad] = false;
         setError(input,mensaje1);
     }else{
         if (!inputOk.exec(informacion)) {
-            valida.input = false;
+            valida[propiedad] = false;
             setError(input,mensaje2)
         }else{
-            valida.input = true;
+            valida[propiedad] = true;
             setSuccess(input);
         }
     }
@@ -122,25 +125,26 @@ function validarCampo (input,mensaje1, mensaje2, reglavalid){
 
 let nombreOk = /^[A-Za-z áéíóúÁÉÍÓÚ]{2,30}$/;
 
-validarCampo(nombre,'Este campo no puede estar vacío','Este campo solo acepta letras mayúsculas, minúsculas y espacios pero debe comenzar con letra inicial mayúscula',nombreOk)
+validarCampo(nombre,'nombre','Este campo no puede estar vacío','Este campo solo acepta letras mayúsculas, minúsculas y espacios pero debe comenzar con letra inicial mayúscula',nombreOk)
 
-validarCampo(apellidos,'Este campo no puede estar vacío','Este campo solo acepta letras mayúsculas, minúsculas y espacios pero debe comenzar con letra inicial mayúscula',nombreOk)
+validarCampo(apellidos,'apellidos','Este campo no puede estar vacío','Este campo solo acepta letras mayúsculas, minúsculas y espacios pero debe comenzar con letra inicial mayúscula',nombreOk)
 
 let telefonoOk = /^[0-9]{8}$/;
 
-validarCampo(telefono, 'Este campo no puede estar vacío', 'Este campo solo acepta 8 números',telefonoOk);
+validarCampo(telefono, 'telefono','Este campo no puede estar vacío', 'Este campo solo acepta 8 números',telefonoOk);
 
 let emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-validarCampo(email, 'Este campo no puede estar vacío', 'Por favor introduzca una dirección de correo electrónico válida', emailOk)
+validarCampo(email, 'email','Este campo no puede estar vacío', 'Por favor introduzca una dirección de correo electrónico válida', emailOk)
 
 let plazosOk = /^[1-9][0-9]{0,2}$/;
 
-validarCampo(plazos,'Este campo no puede estar vacío', 'Por favor introduzca una cantidad de días válida (1 - 365 días)', plazosOk)
+validarCampo(plazos, 'plazos','Este campo no puede estar vacío', 'Por favor introduzca una cantidad de días válida (1 - 365 días)', plazosOk)
 
 plazos.addEventListener('blur',()=>{
     if (Number(plazos.value) >= 365) {
         alert('La cantidad de días no puede extenderse de 365');
+        setError();
         plazos.value = '';
         valida.plazos = false;
     }
@@ -154,42 +158,65 @@ formulario.addEventListener('submit',async(e)=>{//hay que hacer el handler
 
     let totalPagar = 0;
     let coincidencias = [];
+    let extras = [];
+    let extra1 = 'Envolver el pedido para regalo';
+    let extra2 = 'Envío a domicilio';
+    let extra3 = 'Envío express';
+    
+    valida.politPriv = politPriv.checked;//
 
     //se toman los productos
     let elemento = document.getElementsByClassName('item-label');//productos seleccionados
-    let elementoArray = [...elemento];
-    if (elementoArray.length == 0) {
-        alert('Debe de seleccionar al menos un producto');
-        valida.producto = false
-    }
-        valida.producto = true;
-        let valores = [...elemento].map(ele=>{//es necesario utilizar el operador spread pq 
-            //getElementsByClassName devuelve un HTMLcolection no un array y entonces hay que convertirlo
-            //en array
-            return ele.getAttribute('data-value');
-        })    
+     
+    let valores = [...elemento].map(ele=>{//es necesario utilizar el operador spread pq 
+        //getElementsByClassName devuelve un HTMLcolection no un array y entonces hay que convertirlo
+        //en array
+        return ele.getAttribute('data-value');
+    })    
 
     //se toman todos los productos que están a la venta
     await cargarProductos('../assets/productos.json');
 
     coincidencias = productosVenta[0].filter(elemento => valores.includes(elemento.producto));
 
-    coincidencias.map(item =>{
+    let productos = coincidencias.filter(ele=> ele != extra1 && ele != extra2 && ele != extra3)
+
+    if (productos.length == 0 ) {
+        alert('Debe de seleccionar al menos un producto');
+        valida.producto = false
+    }else{
+        valida.producto = true;
+    }    
+
+    productos.map(item =>{
         totalPagar += item.valor;
     })
 
-    if (coincidencias.length > 2 && coincidencias.length <5) {
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    extras = valores.filter(ele=> ele === extra1 || ele === extra2 || ele === extra3);
+
+    if (productos.length > 2 && productos.length <5) {
         totalPagar = totalPagar * 0.95;
     }else{
-        if (coincidencias.length > 4 && coincidencias.length <7) {
+        if (productos.length > 4 && productos.length <7) {
             totalPagar = totalPagar * 0.9;    
         } else {
             totalPagar = totalPagar * 0.85;
         }
     }
+
+    if (extras.length == 2) {
+        totalPagar = totalPagar * 1.1;
+    }
+
+    presupuesto.value = `${totalPagar}`;
+
+
+    if (valida.apellidos == true && valida.email == true && valida.nombre == true && valida.plazos == true 
+        && valida.politPriv == true && valida.producto == true && valida.telefono == true){
+        
+            console.log('first')
+            formulario.submit();
+    }
 })
-
-
-//falta poner la parte de los extras que puede ser envolverlo en papel de regalo, servicio a domicilio
-//o envío express, a cada uno se le pone un valor y se le agrega al resultado y validar el checkbox 
-//de la políticad de privacidad

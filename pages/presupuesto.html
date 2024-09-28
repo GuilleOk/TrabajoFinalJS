@@ -42,16 +42,16 @@
     <h1 id="galeria">Presupuesto de compra</h1>
 
       <div class="container">
-        <form method="post">
+        <form action="./backend.php" method="post" id="formulario">
               <h3>Datos de Contacto</h3>
-              <div class="container">
+              <div class="mx-auto">
                 <div class="containerItem my-3">
                     <div class="d-block">
                         Nombre*
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                        <small></small>
+                        <small class="algoSmall"> hola </small>
                     </div>
                 </div>
                 <div class="containerItem my-3">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
-                        <small></small>
+                        <small class="algoSmall"> hola </small>
                     </div>
                 </div>
                 <div class="containerItem my-3">
@@ -69,7 +69,7 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="text" name="telef" id="telef" placeholder="Teléfono de contacto">
-                        <small></small>
+                        <small class="algoSmall"> hola </small>
                     </div>
                 </div>
                 <div class="containerItem my-3">
@@ -78,12 +78,12 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <input type="text" name="email" id="email" placeholder="Correo electrónico">
-                        <small></small>
+                        <small class="algoSmall"> Hola </small>
                     </div>
                 </div>
               </div>
               <h3>Presupuesto</h3>
-                <div class="container">
+                <div class="mx-auto">
                     <div class="containerItem my-3">
                         <div class="d-block">
                             Producto*
@@ -102,30 +102,53 @@
                                 <option value="Zumo de pera">Zumo de pera</option>
                                 <option value="Zumo de melocotón">Zumo de melocotón</option>
                               </select>
-                            <small></small>
                         </div>
                     </div>
-                    <div class="containerItem my-3"></div>
+                    <div class="containerItem my-3">
                         <div class="d-block">
                             Plazo (cantidad de días que desea recibir el producto)*
                         </div>
                         <div class="d-flex justify-content-center">
                             <input type="text" name="plazos" id="plazos">
-                            <small></small>
+                            <small class="algoSmall"> hola </small>
                         </div>
+                      </div>
+
+                <div class="containerItem my-3">
+                    <div class="d-block">
+                        Facilidades Extras*
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                      <select id="extras" multiple>
+                        <option value="Envolver el pedido para regalo">
+                          Envolver el pedido para regalo
+                        </option>
+                        <option value="Envío a domicilio">Envío a domicilio</option>
+                        <option value="Envío express">Envío express</option>
+                      </select>
+                    </div>
+                    <div class="d-block">
+                      Presupuesto*
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <input type="text" id="presupuesto" readonly>
+                    </div>
                 </div>
-              <h3>Aceptar condiciones y envío de presupuesto</h3>
+
+            <h3 class="my-3">Aceptar condiciones y envío de presupuesto</h3>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                   He leído la política de privacidad
                 </label>
               </div>
-              <button type="submit" id="sendForm" class="btn btn-outline-primary btn-lg">Enviar presupuesto</button>
+              <button type="submit" id="sendForm" class="btn btn-outline-primary btn-lg my-3">Enviar presupuesto</button>
+                </div>
         </form>
         <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
         <script>
-          new MultiSelectTag('producto')
+          new MultiSelectTag('producto');
+          new MultiSelectTag('extras');
         </script>
       </div>
 
