@@ -106,8 +106,8 @@ validarCampo(plazos, 'plazos','Este campo no puede estar vacío', 'Por favor int
 
 plazos.addEventListener('blur',()=>{
     if (Number(plazos.value) >= 365) {
-        alert('La cantidad de días no puede extenderse de 365');
-        setError();
+        // alert('La cantidad de días no puede extenderse de 365');
+        setError(plazos,'La cantidad de días no puede extenderse de 365');
         plazos.value = '';
         valida.plazos = false;
     }
@@ -115,70 +115,103 @@ plazos.addEventListener('blur',()=>{
 
 //-----------------------------------------Lógica del submit----------------------------------------
 
-formulario.addEventListener('submit',async(e)=>{//hay que hacer el handler
-    //asíncrono para poder manejar la info de la promesa
-    e.preventDefault();
+cargarProductos('../assets/productos.json');
 
+function presupuestoCambiado() {
     let totalPagar = 0;
     let coincidencias = [];
-    let extras = [];
     let extra1 = 'Envolver el pedido para regalo';
     let extra2 = 'Envío a domicilio';
     let extra3 = 'Envío express';
-    
+    let errorV = false;
+    let extrasSeleccionados = [];
+    let elemento = document.getElementsByClassName('item-label');//productos seleccionados
+
     valida.politPriv = politPriv.checked;//
 
     //se toman los productos
-    let elemento = document.getElementsByClassName('item-label');//productos seleccionados
-     
-    let valores = [...elemento].map(ele=>{//es necesario utilizar el operador spread pq 
-        //getElementsByClassName devuelve un HTMLcolection no un array y entonces hay que convertirlo
-        //en array
+    
+    let valores = [...elemento].map(ele=>{
         return ele.getAttribute('data-value');
     })    
 
     //se toman todos los productos que están a la venta
-    await cargarProductos('../assets/productos.json');
 
     coincidencias = productosVenta[0].filter(elemento => valores.includes(elemento.producto));
 
-    let productos = coincidencias.filter(ele=> ele != extra1 && ele != extra2 && ele != extra3)
+    let productosSeleccionados = coincidencias.filter(ele=> ele != extra1 && ele != extra2 && ele != extra3)
 
-    if (productos.length == 0 ) {
-        alert('Debe de seleccionar al menos un producto');
+    if (productosSeleccionados.length == 0 ) {
+        // alert('Debe de seleccionar al menos un producto');
         valida.producto = false
     }else{
         valida.producto = true;
     }    
 
-    productos.map(item =>{
+    productosSeleccionados.map(item =>{
         totalPagar += item.valor;
     })
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    extras = valores.filter(ele=> ele === extra1 || ele === extra2 || ele === extra3);
+    extrasSeleccionados = valores.filter(ele=> ele === extra1 || ele === extra2 || ele === extra3);
 
-    if (productos.length > 2 && productos.length <5) {
-        totalPagar = totalPagar * 0.95;
-    }else{
-        if (productos.length > 4 && productos.length <7) {
-            totalPagar = totalPagar * 0.9;    
-        } else if(productos.length >7){
-            totalPagar = totalPagar * 0.85;
-        }
+    if (Number(plazos.value) > 20 && Number(plazos.value) < 120) {
+        totalPagar *= 0.95;
+    } else if (Number(plazos.value) > 119 && Number(plazos.value) < 200) {
+        totalPagar *= 0.9;    
+    } else if (Number(plazos.value) > 199) {
+        totalPagar *= 0.85;
     }
-    if (extras.length == 2) {
+    if (extrasSeleccionados.length == 2) {
         totalPagar = totalPagar * 1.1;
     }
 
-    presupuesto.value = `${totalPagar}`;
+
+    for(const propiedad in valida){
+        if (valida[propiedad] == false) {
+            errorV = false;
+            break;
+        }else{
+            errorV = true;
+        }
+    }
+
+    if (productosSeleccionados.length > 0 && !isNaN(Number(plazos.value))&& plazos.value != '' && errorV == true) {
+        presupuesto.value = `${totalPagar}`;            
+    }
+    
+}
 
 
-    if (valida.apellidos == true && valida.email == true && valida.nombre == true && valida.plazos == true 
-        && valida.politPriv == true && valida.producto == true && valida.telefono == true){
-        
-            console.log('first')
-            formulario.submit();
+formulario.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let errorV = false;
+    for(const propiedad in valida){
+        if (valida[propiedad] == false) {
+            errorV = false;
+            break;
+        }else{
+            errorV = true;
+        }
+    }
+    if (errorV) {
+        presupuestoCambiado();
+        formulario.submit();        
     }
 })
+
+setInterval(() => {
+    let valores = [...document.getElementsByClassName('item-label')].map(ele=>{
+        return ele.getAttribute('data-value');
+    })
+    if (valores.length != 0) {
+        presupuestoCambiado();
+    }
+}, 800);
+
+plazos.addEventListener('change',()=>{
+    setTimeout(() => {
+        presupuestoCambiado()        
+    }, 500);
+});

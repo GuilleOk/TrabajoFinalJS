@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css">
     <link rel="shortcut icon" href="../assets/images/Logo.jpg">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Trabajo Final</title>
@@ -38,9 +40,119 @@
         </nav>
     </div>
 
-    <h1 class="galeria">Inmuebles en oferta</h1>
+    <div class="Banner">
+      <img src="../assets/images/Contacto.jpg" alt="Banner Contacto" id="bannerContacto">
+    </div>
 
-    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <h3 class="galeria">Visión</h3>
+          <p class="vision-mision">Ser la tienda online líder en productos alimenticios y de uso diario, reconocida por ofrecer a nuestros clientes la más amplia variedad de productos de alta calidad, frescos y a precios competitivos, brindando un servicio rápido, eficiente y amigable que se adapte a las necesidades de cada hogar. Aspiramos a ser la primera opción para aquellos que buscan comodidad, rapidez y confianza en sus compras, convirtiéndonos en un referente en el mercado cubano y más allá.</p>
+          <h3 class="galeria">Misión</h3>
+          <p class="vision-mision">En FM Cubana, trabajamos para ofrecer a nuestros clientes una experiencia de compra rápida, segura y placentera, proporcionando una selección diversa de productos alimenticios y de uso diario que satisfagan sus necesidades. Nos esforzamos por ofrecer un servicio excepcional, con un enfoque en la frescura, calidad y la puntualidad en la entrega, siempre manteniendo nuestro compromiso de ser una tienda accesible, confiable y cercana a nuestra comunidad.</p>
+        </div>
+        <div class="col-12 col-lg-6">
+          <h3 class="galeria mb-5">Datos de Contacto</h3>
+          <div class="row d-flex contenedorItemConacto my-5">
+            <div class="col-2">
+              <div class="imagenContacto">
+                <img src="../assets/images/telefono.png" alt="Teléfono de contacto" class="imgContacto">
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="textoContacto">
+                <p>+53 000000000</p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex contenedorItemConacto my-5">
+            <div class="col-2">
+              <div class="imagenContacto">
+                <img src="../assets/images/email.png" alt="E-mail" class="imgContacto">
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="textoContacto">
+                <p>infoFMCubana@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex contenedorItemConacto my-5">
+            <div class="col-2">
+              <div class="imagenContacto">
+                <img src="../assets/images/ubicacion.png" alt="Ubicación" class="imgContacto">
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="textoContacto">
+                <p>General García #504, Bayamo, Granma, Cuba</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="galeria">Ubicación de la tienda</h3>
+
+    <div class="container contenedorMapa my-3">
+      <div id="map"></div>
+    </div>
+
+    <div class="container my-5">
+      <h3 class="galeria">Contáctenos</h3>
+          <form class="formularioContacto">
+              <div class="mx-auto">
+                <div class="containerItem my-3">
+                    <div class="d-block">
+                        Nombre*
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <small class="algoSmall"> hola </small>
+                    </div>
+                </div>
+                <div class="containerItem my-3">
+                    <div class="d-block">
+                        Apellidos*
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                        <small class="algoSmall"> hola </small>
+                    </div>
+                </div>
+                <div class="containerItem my-3">
+                    <div class="d-block">
+                        Teléfono de contacto*
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="telef" id="telef" placeholder="Teléfono de contacto">
+                        <small class="algoSmall"> hola </small>
+                    </div>
+                </div>
+                <div class="containerItem my-3">
+                    <div class="d-block">
+                        Correo electrónico*
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="email" id="email" placeholder="Correo electrónico">
+                        <small class="algoSmall"> Hola </small>
+                    </div>
+                </div>
+                <div class="containerItem my-3">
+                  <div class="d-block">
+                      Información*
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <textarea name="info" id="info"></textarea>
+                    <small class="algoSmall"> Hola </small>
+                  </div>
+              </div>
+              <button type="submit" id="sendForm" class="btn btn-outline-primary btn-lg my-3">Enviar</button>
+              </div>
+          </form>
+    </div>
 
     <div class="w-100 p-0 fondoFooter footerContainer">
         <footer class="py-3 my-4">
@@ -78,5 +190,8 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="../js/contacto.js"></script>
 </body>
 </html>
