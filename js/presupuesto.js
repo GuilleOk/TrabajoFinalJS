@@ -1,5 +1,3 @@
-//------------------------------------Presupuesto----------------------------------------
-
 let nombre = document.getElementById('nombre');
 let apellidos = document.getElementById('apellidos');
 let telefono = document.getElementById('telef');
@@ -12,6 +10,7 @@ let politPriv = document.getElementById('flexCheckChecked');
 let presupuesto = document.getElementById('presupuesto');
 let formulario = document.getElementById('formulario');
 let productosElegidos = [];
+let reset = document.getElementById('resetForm');
 
 let valida = {
     nombre: false,
@@ -86,15 +85,17 @@ function validarCampo (input,propiedad,mensaje1, mensaje2, reglavalid){
 
 //--------------------------Validaciones de algunos campos del formulario-----------------------------
 
-let nombreOk = /^[A-Za-z áéíóúÁÉÍÓÚ]{2,30}$/;
+let nombreOk = /^[A-Za-záéíóúÁÉÍÓÚ]{2,15}$/;
 
-validarCampo(nombre,'nombre','Este campo no puede estar vacío','Este campo solo acepta letras mayúsculas, minúsculas y espacios pero debe comenzar con letra inicial mayúscula',nombreOk)
+validarCampo(nombre,'nombre','Este campo no puede estar vacío','Este campo solo acepta letras y hasta 15 caracteres',nombreOk)
 
-validarCampo(apellidos,'apellidos','Este campo no puede estar vacío','Este campo solo acepta letras mayúsculas, minúsculas y espacios pero debe comenzar con letra inicial mayúscula',nombreOk)
+let apellidosOk = /^[A-Za-záéíóúÁÉÍÓÚ]{2,40}$/;
 
-let telefonoOk = /^[0-9]{8}$/;
+validarCampo(apellidos,'apellidos','Este campo no puede estar vacío','Este campo solo acepta letras y hasta 40 caracteres',apellidosOk)
 
-validarCampo(telefono, 'telefono','Este campo no puede estar vacío', 'Este campo solo acepta 8 números',telefonoOk);
+let telefonoOk = /^[0-9]{9}$/;
+
+validarCampo(telefono, 'telefono','Este campo no puede estar vacío', 'Este campo solo acepta 9 dígitos',telefonoOk);
 
 let emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -163,10 +164,8 @@ function presupuestoCambiado() {
     } else if (Number(plazos.value) > 199) {
         totalPagar *= 0.85;
     }
-    if (extrasSeleccionados.length == 2) {
-        totalPagar = totalPagar * 1.1;
-    }
 
+    totalPagar += extrasSeleccionados.length;
 
     for(const propiedad in valida){
         if (valida[propiedad] == false) {
@@ -177,8 +176,8 @@ function presupuestoCambiado() {
         }
     }
 
-    if (productosSeleccionados.length > 0 && !isNaN(Number(plazos.value))&& plazos.value != '' && errorV == true) {
-        presupuesto.value = `${totalPagar}`;            
+    if (productosSeleccionados.length > 0 && plazos.value != '' && errorV == true) {
+        presupuesto.value = `${totalPagar.toFixed(2)}`;            
     }
     
 }
@@ -208,10 +207,33 @@ setInterval(() => {
     if (valores.length != 0) {
         presupuestoCambiado();
     }
-}, 800);
+}, 500);
 
 plazos.addEventListener('change',()=>{
     setTimeout(() => {
         presupuestoCambiado()        
     }, 500);
+});
+
+function restablecerColores(etiqueta) {
+    let formControl = etiqueta.parentElement;
+    const small = formControl.querySelector('small');
+    let identificadorForm = formControl.parentElement;
+
+    identificadorForm.className = 'identificadorRestablecido';
+    small.className = 'mostrarSmall';
+    small.innerText = '';
+    formControl.className = 'ms-4 w-100';
+}
+
+reset.addEventListener('click', () => {
+    document.querySelectorAll('.item-container').forEach(container => {
+        let eventoClick = new MouseEvent('click');
+        container.childNodes[1].dispatchEvent(eventoClick);
+    });
+    restablecerColores(nombre);
+    restablecerColores(apellidos);
+    restablecerColores(telefono);
+    restablecerColores(email);
+    restablecerColores(plazos);
 });

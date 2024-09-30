@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./assets/images/Logo.jpg">
+    <link rel="shortcut icon" href="./assets/images/Icono.jpg">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Trabajo Final</title>
 </head>
@@ -20,7 +20,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item mx-3">
-                    <a class="nav-link disabled textoNavbar" href="#">Inicio</a>
+                    <a class="nav-link disabled textoNavbar" href="./index.html">Inicio</a>
                   </li>
                   <li class="nav-item dropdown active mx-2">
                     <a class="nav-link dropdown-toggle textoNavbar" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,8 +29,10 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item active textoNavbar" href="./pages/galeria.html">Galería</a></li>
                       <li><a class="dropdown-item active textoNavbar" href="./pages/presupuesto.html">Presupuesto</a></li>
-                      <li><a class="dropdown-item active textoNavbar" href="./pages/contacto.html">Contacto</a></li>
                     </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link textoNavbar" href="./pages/contacto.html">Contacto</a>
                   </li>
                 </ul>
               </div>
@@ -38,7 +40,8 @@
         </nav>
     </div>
 
-    <div>
+    <section class="loPrimero">
+     <h2 class="noMostrar">Sección primera</h2>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -47,16 +50,13 @@
               <div class="carousel-item">
                 <img src="./assets/images/Banner_2.jpg" class="d-block w-100 photoCarousel" alt="Banner 2">
               </div>
-              <!-- <div class="carousel-item">
-                <img src="./assets/images/inmuebles_en_venta/pexels-pixabay-208736.jpg" class="d-block w-100 photoCarousel" alt="inmueble3">
-              </div> -->
             </div>
           </div>
-    </div>
+    </section>
 
     <h1 class="servicios">Servicios en Oferta</h1>
 
-    <section class="container">
+    <section class="container d-flex justify-content-around">
         <div class="row w-100">
             <div class="col-12 col-md-6 col-lg-4 my-3">
                 <div class="card mx-auto" style="width: 17.2rem;">
@@ -88,9 +88,47 @@
         </div>
     </section>
 
+    <section class="d-flex justify-content-center mt-5 mb-2">
+      <h2 class="noMostrar">Publicidad</h2>
+      <img src="./assets/images/Promocion.jpg" alt="Publicidad" id="publicidad">
+    </section>
+
+    <section class="my-4 d-lg-block w-75 mx-auto">
+    <h2 class="galeria">Nuestros productos</h2>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <div class="d-flex">
+                    <img src="./plugins/Lightbox/images/galeria/Cerveza_Bucanero.jpg" class="w-25 imagenesCarrousel" alt="Cerveza Bucanero">
+                    <img src="./plugins/Lightbox/images/galeria/Coca_Cola.jpg" class="w-25 imagenesCarrousel" alt="Coca Cola">
+                    <img src="./plugins/Lightbox/images/galeria/Malta.jpg" class="w-25 imagenesCarrousel" alt="Malta">
+                    <img src="./plugins/Lightbox/images/galeria/Refresco_Fanta_Naranja.jpg" class="w-25 imagenesCarrousel" alt="Refresco de Naranja">
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="d-flex">
+                    <img src="./plugins/Lightbox/images/galeria/Alimentos/Catsup.jpg" class="w-25 imagenesCarrousel" alt="Catsup">
+                    <img src="./plugins/Lightbox/images/galeria/Alimentos/Chorizo.jpg" class="w-25 imagenesCarrousel" alt="Chorizo">
+                    <img src="./plugins/Lightbox/images/galeria/Alimentos/Huevos.jpg" class="w-25 imagenesCarrousel" alt="Huevos">
+                    <img src="./plugins/Lightbox/images/galeria/Alimentos/Jamon.jpg" class="w-25 imagenesCarrousel" alt="Jamón">
+                </div>
+              </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </section>
+
+
     <section id="opiniones" class="my-4 d-none d-lg-block w-75 mx-auto">
         <h2 id="labelOpiniones" class="my-4">Opiniones</h2>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="4000">
                 <div class="d-block w-100 opinion"></div>
@@ -108,11 +146,11 @@
                 <div class="d-block w-100 opinion"></div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>

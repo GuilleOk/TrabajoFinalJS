@@ -17,6 +17,10 @@ body{
     padding: 0;
     padding-top: 5px;
     background-color: dodgerblue;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
 }
 
 .textoNavbar{
@@ -25,12 +29,27 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.nav-link.active {
+    color: white !important;
+    font-weight: 450;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#publicidad{
+    width: 77%;
+    height: 10%;
+}
+
 .dropdown-menu{
     background-color: dodgerblue;
 }
 
 nav{
     height: 60px;
+}
+
+.noMostrar{
+    display: none;
 }
 
 .footerContainer{
@@ -306,4 +325,37 @@ textarea{
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px 10px;
+}
+
+#presupuesto{
+    background-color: aliceblue;
+}
+
+.imagenesCarrousel {
+    object-fit: cover; /* Para que las imágenes se ajusten correctamente dentro de su contenedor */
+    height: 100%; /* Asegura que las imágenes llenen la altura de su contenedor */
+    width: 25%;
+}
+
+
+.identificadorRestablecido{
+    color: black;
+}
+
+.loPrimero{
+    margin-top: 60px;
+}
+
+#h1Galeria{
+    margin-top: 80px;
+}
+
+.loPrimeroPresupuesto{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.foto-con-sombra {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
