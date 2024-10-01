@@ -3,13 +3,13 @@
             "id": 0,
             "nombre":"Ana García López",
             "foto":"../assets/images/avatars/av7.jpg",
-            "opinion": "¡Me encanta esta tienda! Los productos siempre llegan frescos y en perfecto estado. La variedad de carnes y embutidos es excelente, y los precios son muy competitivos. Además, el servicio de atención al cliente es muy amable y siempre responden rápido a cualquier consulta. Sin duda, mi sitio favorito para comprar productos de calidad."  
+            "opinion": "¡Me encanta esta tienda! Los productos siempre llegan frescos y en perfecto estado. La variedad de carnes y embutidos es excelente, y los precios son muy competitivos. Sin duda, mi sitio favorito para comprar productos de calidad."  
         },
         {
             "id": 1,
             "nombre":"Carlos Martínez Pérez",
             "foto":"../assets/images/avatars/av4.jpg",
-            "opinion": "Descubrí esta tienda hace unos meses, y desde entonces no he dejado de comprar mi café favorito aquí. Antes no conocía, por experiencia propia, el café cubano y me he quedado estupefacto con la calidad y la sensación que genera en el paladar dicho producto. ¡No hay nada mejor que recibir mi café recién tostado para empezar el día con energía!"
+            "opinion": "Descubrí esta tienda hace unos meses, y desde entonces no he dejado de comprar mi café favorito aquí. Antes no conocía, por experiencia propia, el café cubano y me he quedado estupefacto con la calidad de dicho producto. ¡No hay nada mejor que el café para empezar el día con energía!"
         },
         {
             "id": 2,

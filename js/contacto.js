@@ -27,7 +27,7 @@ function success(position) {
 
     //-----------Se crea el icono-------------------
     let inicio = L.icon(
-        {iconUrl: '../assets/images/ubicacion.png',
+        {iconUrl: '../assets/images/ubicacionUsu.png',
         iconSize: [45,60],
         iconAnchor: [25,60],
          popupAnchor: [-3,-76]
